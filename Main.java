@@ -72,7 +72,6 @@ public static void main(String[] args) throws IOException {
     	                if (selectedBatch != null) {
     	                    timet[i][j+1] = selectedBatch.a[i][j];
     	                } else {
-    	                    // Handle the case where the Batch object is null (display an error message, etc.)
     	                    timet[i][j+1] = "ERROR: Batch not found";
     	                }
     	            }
@@ -104,66 +103,6 @@ public static void main(String[] args) throws IOException {
     view.add(sp);
     
 
-    JPanel delete=new JPanel(); 
-    JLabel d1 = new JLabel("Delete Course");
-    d1.setBounds(50,50,500,50);
-    d1.setFont(new Font("TimesRoman",Font.BOLD,30));
-    d1.setForeground(Color.white);
-    JLabel d2 = new JLabel("Course");
-    d2.setFont(new Font("TimesRoman",Font.BOLD,20));
-    d2.setBounds(50,125,200,50);
-    d2.setForeground(Color.white);
-    JComboBox d3 = new JComboBox(course);
-    d3.setBounds(250,125,200,50);
-    JButton d4 = new JButton("Delete");
-    d4.setBounds(550,125,200,50);
-    d4.setBackground(Color.white);
-    d4.setForeground(Color.black);
-    JLabel d5 = new JLabel("Delete Professor");
-    d5.setFont(new Font("TimesRoman",Font.BOLD,30));
-    d5.setBounds(50,200,500,50);
-    d5.setForeground(Color.white);
-    JLabel d6 = new JLabel("Professor");
-    d6.setFont(new Font("TimesRoman",Font.BOLD,20));
-    d6.setBounds(50,275,200,50);
-    d6.setForeground(Color.white);
-    JComboBox d7 = new JComboBox(profs);
-    d7.setBounds(250,275,200,50);
-    JButton d8 = new JButton("Delete");
-    d8.setBounds(550,275,200,50);
-    d8.setBackground(Color.white);
-    d8.setForeground(Color.black);
-    JLabel d9 = new JLabel("Delete Batch");
-    d9.setFont(new Font("TimesRoman",Font.BOLD,30));
-    d9.setForeground(Color.white);
-    d9.setBounds(50,350,500,50);
-    JLabel d10 = new JLabel("Batch");
-    d10.setFont(new Font("TimesRoman",Font.BOLD,20));
-    d10.setBounds(50,425,200,50);
-    d10.setForeground(Color.white);
-    JComboBox d11 = new JComboBox(profs);
-    d11.setBounds(250,425,200,50);
-    JButton d12 = new JButton("Delete");
-    d12.setForeground(Color.black);
-    d12.setBounds(550,425,200,50);
-    d12.setBackground(Color.white);
-    delete.setBackground(Color.black);
-    delete.setLayout(null);
-    delete.add(d1);
-    delete.add(d2);
-    delete.add(d3);
-    delete.add(d4);
-    delete.add(d5);
-    delete.add(d6);
-    delete.add(d7);
-    delete.add(d8);
-    delete.add(d9);
-    delete.add(d10);
-    delete.add(d11);
-    delete.add(d12); 
-
-
-
     JPanel createBatch=new JPanel();
     JLabel cb1= new JLabel("Name");
     cb1.setFont(new Font("TimesRoman",Font.BOLD,20)); 
@@ -190,7 +129,6 @@ public static void main(String[] args) throws IOException {
     cb6.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent e){
             cb.addItem(cb2.getText());
-            d11.addItem(cb2.getText());
             B.put(cb2.getText(),new Batch());
             B.get(cb2.getText()).setName(cb2.getText());
             JOptionPane.showMessageDialog(s,"A new batch "+cb2.getText()+" has been created");
@@ -267,7 +205,6 @@ public static void main(String[] args) throws IOException {
         public void actionPerformed(ActionEvent e){
             pf.addItem(cp2.getText());
             cb7.addItem(cp2.getText());
-            d7.addItem(cp2.getText());
             PR.put(cp2.getText(),new Professor());
             PR.get(cp2.getText()).setName(cp2.getText());
             JOptionPane.showMessageDialog(s,"A new professor "+cp2.getText()+" has been created");
@@ -303,7 +240,6 @@ public static void main(String[] args) throws IOException {
     cc5.setBackground(Color.white);
     cc5.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent e){ 
-            d3.addItem(cc2.getText());
             cb4.addItem(cc2.getText());
             cp4.addItem(cc2.getText());
             CO.put(cc2.getText(),new Course());
@@ -327,7 +263,6 @@ public static void main(String[] args) throws IOException {
     t.add("Create Batch",createBatch);
     t.add("Create Course",createCourse);
 	t.add("Create Professor",createProfessor);
-    t.add("Delete",delete); 
     t.setBackground(Color.gray);  
     f.add(t);  
     f.setSize(1500,800);  
