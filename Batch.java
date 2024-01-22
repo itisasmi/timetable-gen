@@ -56,6 +56,15 @@ public class Batch extends Timetable {
 
             return true;
         }
+        for (i = 0; i < 6; i++) {
+            for (j = 0; j < 6; j++) { 
+                if (this.a[i][j] != null && this.a[i][j + 1] != null) {
+                    list.remove(Integer.valueOf(i * 10 + j));
+                    list.remove(Integer.valueOf(i * 10 + (j + 1)));
+                }
+            }
+        }
+
 
         list.clear();
         return false;

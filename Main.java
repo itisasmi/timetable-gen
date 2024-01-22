@@ -53,7 +53,7 @@ public static void main(String[] args) throws IOException {
                           {"Thursday","","","","BREAK","","",""}, 
                           {"Friday","","","","BREAK","","",""}, 
                           {"Saturday","","","","BREAK","","",""}};
-	String column[]={"","1","2","3","4","5","6","7"};
+	String column[]={"","9:00-10:00","10:00-11:00","11:00-12:00","12:00-13:00","13:00-14:00","14:00-15:00","15:00-16:00"};
     JTable jt=new JTable(timet,column);
     jt.setSize(1000,100);
     JScrollPane sp=new JScrollPane(jt);
@@ -141,7 +141,7 @@ public static void main(String[] args) throws IOException {
                     JOptionPane.showMessageDialog(s,"A new course has been added to the batch "+cb2.getText()+"\n"+"Course: "+cb4.getItemAt(cb4.getSelectedIndex()).toString()+"\n"+"Professor: "+cb7.getItemAt(cb7.getSelectedIndex()).toString());
                 }
                 else{
-                    JOptionPane.showMessageDialog(s,"Course already added!");
+                    JOptionPane.showMessageDialog(s,"Course and Professor are already assigned to this batch.");
                 }
             }
             else{
