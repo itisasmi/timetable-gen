@@ -141,7 +141,7 @@ public static void main(String[] args) throws IOException {
                     JOptionPane.showMessageDialog(s,"A new course has been added to the batch "+cb2.getText()+"\n"+"Course: "+cb4.getItemAt(cb4.getSelectedIndex()).toString()+"\n"+"Professor: "+cb7.getItemAt(cb7.getSelectedIndex()).toString());
                 }
                 else{
-                    JOptionPane.showMessageDialog(s,"Periods are insufficient for adding this course to the batch");
+                    JOptionPane.showMessageDialog(s,"Course already added!");
                 }
             }
             else{
